@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="mysql语句的书写顺序和执行顺序mysql语句的书写顺序和执行顺序有很大差异。">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Rafe Lee">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="mysql语句的书写顺序和执行顺序"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Half Soul"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    
+        <meta name="twitter:card" content="summary" />
+    
+    
+    
+
+    <!-- Title -->
+    
+    <title>mysql语句的书写顺序和执行顺序 - Half Soul</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    Home
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    Archives
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/about.html">
+                    About
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    Tags
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/categories">
+                    Categories
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact.html">
+                    Contact
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2017/06/20/2017-06-20-mysql%E8%AF%AD%E5%8F%A5%E7%9A%84%E4%B9%A6%E5%86%99%E9%A1%BA%E5%BA%8F%E5%92%8C%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F/">
+                mysql语句的书写顺序和执行顺序
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2017-06-20</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/数据库/">数据库</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <h2 id="mysql语句的书写顺序和执行顺序"><a href="#mysql语句的书写顺序和执行顺序" class="headerlink" title="mysql语句的书写顺序和执行顺序"></a>mysql语句的书写顺序和执行顺序</h2><p>mysql语句的书写顺序和执行顺序有很大差异。<span id="more"></span></p>
+<p>书写顺序，mysql的一般书写顺写为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">select </span><br><span class="line">    &lt;要返回的数据列&gt;</span><br><span class="line">from</span><br><span class="line">    &lt;表名&gt;</span><br><span class="line">&lt;join, left join, right join...&gt; join</span><br><span class="line">    &lt;join表&gt;</span><br><span class="line">on</span><br><span class="line">    &lt;join条件&gt;</span><br><span class="line">where</span><br><span class="line">    &lt;where条件&gt;</span><br><span class="line">group by</span><br><span class="line">    &lt;分组条件&gt;</span><br><span class="line">having</span><br><span class="line">    &lt;分组后的筛选条件&gt;</span><br><span class="line">order by</span><br><span class="line">    &lt;排序条件&gt;</span><br><span class="line">limit</span><br><span class="line">    &lt;行数限制&gt;</span><br></pre></td></tr></table></figure>
+
+<p>然而其执行顺序却是：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">from </span><br><span class="line">    &lt;表名&gt;          # 笛卡尔积</span><br><span class="line">on </span><br><span class="line">    &lt;筛选条件&gt;          #对笛卡尔积的虚表进行筛选</span><br><span class="line">&lt;join, left join, right join...&gt; join </span><br><span class="line">    &lt;join表&gt;  #指定join，用于添加数据到on之后的虚表中，例如left join会将左表的剩余数据添加到虚表中</span><br><span class="line">where </span><br><span class="line">    &lt;where条件&gt;     #对上述虚表进行筛选</span><br><span class="line">group by</span><br><span class="line">    &lt;分组条件&gt;      #分组</span><br><span class="line">&lt;sum()等聚合函数&gt;   #用于having子句进行判断，在书写上这类聚合函数是写在having判断里面的</span><br><span class="line">having </span><br><span class="line">    &lt;分组筛选&gt;      #对分组后的结果进行聚合筛选</span><br><span class="line">select </span><br><span class="line">    &lt;返回数据列表&gt;       #返回的单列必须在group by子句中，聚合函数除外</span><br><span class="line">distinct</span><br><span class="line">order by </span><br><span class="line">    &lt;排序条件&gt;      #排序</span><br><span class="line">limit </span><br><span class="line">    &lt;行数限制&gt;</span><br></pre></td></tr></table></figure>
+
+<p>部分解释：</p>
+<ol>
+<li>==<strong>from</strong>：select * from table_1, table_2;== 与 ==select * from table_1 join table_2;== 的结果一致，都是表示求笛卡尔积；</li>
+</ol>
+<p>　　用于直接计算两个表笛卡尔积，得到虚拟表VT1，==这是所有select语句最先执行的操作==，其他操作时在这个表上进行的，也就是==from操作==所完成的内容</p>
+<ol start="2">
+<li><p>==<strong>on</strong>==: 从VT1表中筛选符合条件的数据，形成VT2表；</p>
+</li>
+<li><p>==<strong>join</strong>==: 将该join类型的数据补充到VT2表中，例如==left join==会将==左表的剩余数据==添加到虚表VT2中，形成VT3表；==若表的数量大于2，则会重复1-3步==；</p>
+</li>
+<li><p>==<strong>where</strong>:== 执行筛选，（不能使用聚合函数）得到VT4表；</p>
+</li>
+<li><p>==<strong>group by</strong>==: 对VT4表进行分组，得到VT5表；其后处理的语句，如select，having，所用到的列必须包含在group by条件中，没有出现的需要用聚合函数；</p>
+</li>
+<li><p>==<strong>having</strong>==: 筛选分组后的数据，得到VT6表；</p>
+</li>
+<li><p>==<strong>select</strong>==: 返回列得到VT7表；</p>
+</li>
+<li><p>==<strong>distinct</strong>==: 用于去重得到VT8表；</p>
+</li>
+<li><p>==<strong>order by</strong>==: 用于排序得到VT9表；</p>
+</li>
+<li><p>==<strong>limit</strong>==: 返回需要的行数，得到VT10；</p>
+</li>
+</ol>
+<p>注意：</p>
+<ul>
+<li>group by条件中，每个列必须是有效列，不能是聚合函数；</li>
+<li>null值也会作为一个分组返回；</li>
+<li>除了聚合函数，select子句中的列必须在group by条件中；</li>
+</ul>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/MySQL/">#MySQL</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>About</h2>
+                <p>
+                    This theme was developed by <a target="_blank" rel="noopener" href="https://github.com/klugjo">Jonathan Klughertz</a>. The source code is available on Github. Create Websites. Make Magic.
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>Recent Posts</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/2021/05/06/hello-world/">Hello World</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2020/09/11/VUE(sass-loader%E3%80%81node-sass)%E5%AE%89%E8%A3%85%E5%8F%8A%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3/">VUE(sass-loader、node-sass</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2019/11/03/%E9%98%BF%E9%87%8C%E4%BA%91OSS%E5%9D%91/">阿里云OSS坑</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2019/09/12/IDEA-REST-Client/">IDEA REST Client</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>Categories</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/idea/">idea</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/%E5%9B%BE%E4%B9%A6%E6%8E%A8%E8%8D%90/">图书推荐</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/Java/">Java</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a target="_blank" rel="noopener" href="https://github.com/klugjo/hexo-theme-alpha-dust">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a target="_blank" rel="noopener" href="https://twitter.com/?lang=en">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-twitter"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a target="_blank" rel="noopener" href="https://www.facebook.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-facebook"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a target="_blank" rel="noopener" href="https://www.instagram.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-instagram"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a target="_blank" rel="noopener" href="https://dribbble.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-dribbble"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a target="_blank" rel="noopener" href="https://telegram.org/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-telegram"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a target="_blank" rel="noopener" href="https://www.behance.net/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-behance"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a target="_blank" rel="noopener" href="https://500px.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-500px"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:18303460126@163.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Untitled. All right reserved | Design & Hexo <a target="_blank" rel="noopener" href="http://www.codeblocq.com/">Jonathan Klughertz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+
+<script src="/js/main.js"></script>
+
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

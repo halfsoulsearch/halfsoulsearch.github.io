@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="Spring MVC1 Spring MVC 概览">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Rafe Lee">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Spring MVC"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Half Soul"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    
+        <meta name="twitter:card" content="summary" />
+    
+    
+    
+
+    <!-- Title -->
+    
+    <title>Spring MVC - Half Soul</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    Home
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    Archives
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/about.html">
+                    About
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    Tags
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/categories">
+                    Categories
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact.html">
+                    Contact
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2018/01/03/Spring-MVC/">
+                Spring MVC
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2018-01-03</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/Java/">Java</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <h1 id="Spring-MVC"><a href="#Spring-MVC" class="headerlink" title="Spring MVC"></a>Spring MVC</h1><h3 id="1-Spring-MVC-概览"><a href="#1-Spring-MVC-概览" class="headerlink" title="1 Spring MVC 概览"></a>1 Spring MVC 概览<span id="more"></span></h3><p>Spring 提供了一个功能齐全的 MVC 框架用于构建 Web 应用程序。Spring 框架可以很容易的和其他的 MVC 框架融合(如 Struts)，该框架使用控制反转(IOC)将控制器逻辑和业务对象分离开来。它也允许以声明的方式绑定请求参数到业务对象上。</p>
+<ul>
+<li>DispatcherServlet<ul>
+<li>Spring 的 MVC 框架是围绕 DispatcherServlet 来设计的，它用来处理所有的 HTTP 请求和响应。</li>
+</ul>
+</li>
+<li>WebApplicationContext<ul>
+<li>WebApplicationContext 继承了 ApplicationContext，并添加了一些 web 应用程序需要的功能。和普通的 ApplicationContext 不同，WebApplicationContext 可以用来处理主题样式，它也知道如何找到相应的 servlet。</li>
+</ul>
+</li>
+<li>Controller<ul>
+<li>控制器提供对应用程序行为的访问，通常通过服务接口实现。控制器解析用户的输入，并将其转换为一个由视图呈现给用户的模型。Spring 通过一种极其抽象的方式实现控制器，它允许用户创建多种类型的控制器。</li>
+<li>@Controller 注解表示该类扮演控制器的角色。Spring 不需要继承任何控制器基类或应用 Servlet API。</li>
+</ul>
+</li>
+<li>@RequestMapping 注解用于将 URL 映射到任何一个类或者一个特定的处理方法上。</li>
+</ul>
+<h4 id="1-1-Spring-MVC-运行原理"><a href="#1-1-Spring-MVC-运行原理" class="headerlink" title="1.1 Spring MVC 运行原理"></a>1.1 Spring MVC 运行原理</h4><p><img src="https://wujun234.github.io/images/1545011851570.png" alt="img"></p>
+<ol>
+<li>Spring MVC 通过一个单独的前端控制器（DispatcherServlet）过滤分发请求。</li>
+<li>DispatcherServlet 根据处理器映射（HandlerMapping）和请求携带的 URL 决定将请求发送给某个控制器（Controller）。</li>
+<li>控制器从请求中取得信息，然后委托业务逻辑组件处理。将处理结果打包在模型（model）中，然后指定一个视图（view）的逻辑名称，然后将请求和模型、视图名称一起发送回 DispatcherServlet。</li>
+<li>DispatcherServlet 用视图名称查找对应的视图解析器（ViewResolver），负责将逻辑名称转换成对应的页面实现。</li>
+<li>最后一步就是视图的实现。视图会使用模型数据填充到视图实现中，然后将结果放在 HTTP 响应对象中。</li>
+</ol>
+<h4 id="1-2-Spring-MVC-配置"><a href="#1-2-Spring-MVC-配置" class="headerlink" title="1.2 Spring MVC 配置"></a>1.2 Spring MVC 配置</h4><h5 id="1）配置前端控制器"><a href="#1）配置前端控制器" class="headerlink" title="1）配置前端控制器"></a>1）配置前端控制器</h5><p>继承了 AbstractAnnotationConfigDispatcherServletInitializer，会在项目运行初始化被自动发现并加载。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AppInitializer</span> <span class="keyword">extends</span> <span class="title">AbstractAnnotationConfigDispatcherServletInitializer</span> </span>&#123;</span><br><span class="line">       <span class="comment">// 根容器</span></span><br><span class="line">       <span class="meta">@Override</span></span><br><span class="line">       <span class="keyword">protected</span> Class&lt;?&gt;[] getRootConfigClasses() &#123; </span><br><span class="line">             <span class="keyword">return</span> <span class="keyword">new</span> Class&lt;?&gt;[] &#123; RootConfig.class &#125;;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="comment">// Spring mvc 容器，指定配置类</span></span><br><span class="line">       <span class="meta">@Override</span></span><br><span class="line">       <span class="keyword">protected</span> Class&lt;?&gt;[] getServletConfigClasses() &#123; </span><br><span class="line">             <span class="keyword">return</span> <span class="keyword">new</span> Class&lt;?&gt;[] &#123; WebConfig.class &#125;;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="comment">// DispatcherServlet 映射,从&quot;/&quot;开始</span></span><br><span class="line">       <span class="meta">@Override</span></span><br><span class="line">       <span class="keyword">protected</span> String[] getServletMappings() &#123; </span><br><span class="line">             <span class="keyword">return</span> <span class="keyword">new</span> String[] &#123; <span class="string">&quot;/&quot;</span> &#125;;</span><br><span class="line">       &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>AppInitializer 类需要实现三个方法，RootConfig 和 WebConfig 是两个关键配置类，而 getServletMappings 只需要返回一个 String 的列表，{“/”}的意思是监听访问 url 下所有的请求。</p>
+<h5 id="2）配置视图解析器"><a href="#2）配置视图解析器" class="headerlink" title="2）配置视图解析器"></a>2）配置视图解析器</h5><p>@EnableWebMvc：启动 Spring MVC 特性<br>configer.enable()：静态资源的请求将转交给 servlert 容器的 default servlet 处理。</p>
+<ul>
+<li>setPrefix() 方法用于设置视图路径的前缀；</li>
+<li>setSuffix() 用于设置视图路径的后缀；</li>
+<li>setExposeContextBeansAsAttributes(true) 使得可以在 JSP 页面中通过 ${ } 访问容器中的 bean</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@EnableWebMvc</span><span class="comment">//启动Spring MVC</span></span><br><span class="line"><span class="meta">@ComponentScan(&quot;org.test.spittr.web&quot;)</span><span class="comment">//启动组件扫描</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WebConfig</span> <span class="keyword">extends</span> <span class="title">WebMvcConfigurerAdapter</span> </span>&#123;</span><br><span class="line">       <span class="meta">@Bean</span></span><br><span class="line">       <span class="function"><span class="keyword">public</span> ViewResolver <span class="title">viewResolver</span><span class="params">()</span> </span>&#123; </span><br><span class="line">             <span class="comment">// 配置JSP视图解析器</span></span><br><span class="line">             InternalResourceViewResolver resolver = <span class="keyword">new</span> InternalResourceViewResolver();</span><br><span class="line">             resolver.setPrefix(<span class="string">&quot;/WEB-INF/views/&quot;</span>);</span><br><span class="line">             resolver.setSuffix(<span class="string">&quot;.jsp&quot;</span>);</span><br><span class="line">             <span class="comment">// 可以在JSP页面中通过$&#123;&#125;访问beans</span></span><br><span class="line">             resolver.setExposeContextBeansAsAttributes(<span class="keyword">true</span>);</span><br><span class="line">             <span class="keyword">return</span> resolver;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">configureDefaultServletHandling</span><span class="params">(DefaultServletHandlerConfigurer configurer)</span> </span>&#123;</span><br><span class="line">        configurer.enable(); <span class="comment">//配置静态文件处理</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="3）配置-Bean"><a href="#3）配置-Bean" class="headerlink" title="3）配置 Bean"></a>3）配置 Bean</h5><p>RootConfig 在设置扫描机制的时候，将之前 WebConfig 设置过的那个包排除了。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@ComponentScan(basePackages = &#123; &quot;org.test.spittr.controller&quot; &#125;, excludeFilters = &#123;</span></span><br><span class="line"><span class="meta">             @ComponentScan.Filter(type = FilterType.ANNOTATION, value = EnableWebMvc.class) &#125;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RootConfig</span> </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="2-编写-Controller"><a href="#2-编写-Controller" class="headerlink" title="2 编写 Controller"></a>2 编写 Controller</h3><h4 id="2-1-控制器类"><a href="#2-1-控制器类" class="headerlink" title="2.1 控制器类"></a>2.1 控制器类</h4><p>控制器类就是含有被 @RequestMapping 注解修饰的方法的类。@Controller 是 @Component 的别名，返回一个视图逻辑名称。</p>
+<p>@RequestMapping 可加在类上和方法上，可同时映射多个路径</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="meta">@RequestMapping(value = &quot;/&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HomeController</span> </span>&#123;</span><br><span class="line">     <span class="meta">@RequestMapping(value = &#123; &quot;/&quot;, &quot;/homepage&quot; &#125;, method = RequestMethod.GET)</span></span><br><span class="line">     <span class="function"><span class="keyword">public</span> String <span class="title">home</span><span class="params">()</span> </span>&#123;</span><br><span class="line">          <span class="keyword">return</span> <span class="string">&quot;home&quot;</span>;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="2-2-请求参数"><a href="#2-2-请求参数" class="headerlink" title="2.2 请求参数"></a>2.2 请求参数</h4><p>Spring MVC 提供了三种方式，可以让客户端给控制器的 handler 传入参数：</p>
+<h5 id="1）查询参数"><a href="#1）查询参数" class="headerlink" title="1）查询参数"></a>1）查询参数</h5><p>@RequestParam，可设默认和非必填</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping(method = RequestMethod.GET)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Spittle&gt; <span class="title">spittles</span><span class="params">(<span class="meta">@RequestParam(&quot;max&quot;)</span> <span class="keyword">long</span> max, </span></span></span><br><span class="line"><span class="params"><span class="function">                              <span class="meta">@RequestParam(value = &quot;count&quot;, defaultValue = &quot;20&quot;)</span> <span class="keyword">int</span> count)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> spittleRepository.findSpittles(max, count);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="2）表单参数"><a href="#2）表单参数" class="headerlink" title="2）表单参数"></a>2）表单参数</h5><ul>
+<li>“redirect:”前缀：解析为重定向的规则， 而不是视图的名称。</li>
+<li>“forward:”前缀：请求将会前往（forward） 指定的 URL 路径， 而不再是重定向。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping(value = &quot;/register&quot;, method = RequestMethod.POST)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">processRegistration</span><span class="params">(Spitter spitter)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;redirect:/spitter/&quot;</span> + spitter.getUsername();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="3）路径参数"><a href="#3）路径参数" class="headerlink" title="3）路径参数"></a>3）路径参数</h5><p>@PathVariable，如果函数参数和占位符名称相同，可省略注解的参数</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping(value = &quot;abc/&#123;spittleId&#125;&quot;, method = RequestMethod.GET)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">showSpittle</span><span class="params">(<span class="meta">@PathVariable(&quot;spittleId&quot;)</span> <span class="keyword">long</span> spittleId,Model model)</span> </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="2-3-校验参数"><a href="#2-3-校验参数" class="headerlink" title="2.3 校验参数"></a>2.3 校验参数</h4><p>Java Validation API 定义了多个注解， 这些注解可以放到属性上，从而限制这些属性的值。</p>
+<table>
+<thead>
+<tr>
+<th>注 解</th>
+<th>描 述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>@AssertFalse</td>
+<td>所注解的元素必须是 Boolean 类型， 并且值为 false</td>
+</tr>
+<tr>
+<td>@AssertTrue</td>
+<td>所注解的元素必须是 Boolean 类型， 并且值为 true</td>
+</tr>
+<tr>
+<td>@DecimalMax</td>
+<td>所注解的元素必须是数字， 并且它的值要小于或等于给定的 BigDecimalString 值</td>
+</tr>
+<tr>
+<td>@DecimalMin</td>
+<td>所注解的元素必须是数字， 并且它的值要大于或等于给定的 BigDecimalString 值</td>
+</tr>
+<tr>
+<td>@Digits</td>
+<td>所注解的元素必须是数字， 并且它的值必须有指定的位数</td>
+</tr>
+<tr>
+<td>@Future</td>
+<td>所注解的元素的值必须是一个将来的日期</td>
+</tr>
+<tr>
+<td>@Max</td>
+<td>所注解的元素必须是数字， 并且它的值要小于或等于给定的值</td>
+</tr>
+<tr>
+<td>@Min</td>
+<td>所注解的元素必须是数字， 并且它的值要大于或等于给定的值</td>
+</tr>
+<tr>
+<td>@NotNull</td>
+<td>所注解元素的值必须不能为 null</td>
+</tr>
+<tr>
+<td>@Null</td>
+<td>所注解元素的值必须为 null</td>
+</tr>
+<tr>
+<td>@Past</td>
+<td>所注解的元素的值必须是一个已过去的日期</td>
+</tr>
+<tr>
+<td>@Pattern</td>
+<td>所注解的元素的值必须匹配给定的正则表达式</td>
+</tr>
+<tr>
+<td>@Size</td>
+<td>所注解的元素的值必须是 String、 集合或数组， 并且它的长度要符合给定的范围</td>
+</tr>
+</tbody></table>
+<h5 id="校验-bean-对象"><a href="#校验-bean-对象" class="headerlink" title="校验 bean 对象"></a>校验 bean 对象</h5><p>@Valid 注解标注要检验的参数，Errors 参数要紧跟其后面</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping(value = &quot;/register&quot;, method = RequestMethod.POST)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">processRegistration</span><span class="params">(<span class="meta">@Valid</span> Spitter spitter, Errors errors)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(errors.hasErrors())&#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;redirect:/spitter/&quot;</span> + spitter.getUsername();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="2-4-其他注解"><a href="#2-4-其他注解" class="headerlink" title="2.4 其他注解"></a>2.4 其他注解</h4><ul>
+<li>@RequestBody：将方法参数直接绑定到 HTTP 请求 Body 上</li>
+<li>@ResponseBody：将返回值作为响应体</li>
+<li>@RestController：避免重复写 @ResponseBody</li>
+<li>@CookieValue</li>
+<li>@RequestHeader</li>
+</ul>
+<p>Spring 4.3 中引进了｛@GetMapping、@PostMapping、@PutMapping、@DeleteMapping、@PatchMapping｝ 来帮助简化常用的 HTTP 方法的映射 并更好地表达被注解方法的语义</p>
+<ul>
+<li>@GetMapping 是一个组合注解：是 @RequestMapping(method = RequestMethod.GET) 的缩写</li>
+<li>@PostMapping 是一个组合注解：是 @RequestMapping(method = RequestMethod.POST) 的缩写</li>
+</ul>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/Spring/">#Spring</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>About</h2>
+                <p>
+                    This theme was developed by <a target="_blank" rel="noopener" href="https://github.com/klugjo">Jonathan Klughertz</a>. The source code is available on Github. Create Websites. Make Magic.
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>Recent Posts</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/2021/05/06/hello-world/">Hello World</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2020/09/11/VUE(sass-loader%E3%80%81node-sass)%E5%AE%89%E8%A3%85%E5%8F%8A%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3/">VUE(sass-loader、node-sass</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2019/11/03/%E9%98%BF%E9%87%8C%E4%BA%91OSS%E5%9D%91/">阿里云OSS坑</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2019/09/12/IDEA-REST-Client/">IDEA REST Client</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>Categories</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/idea/">idea</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/%E5%9B%BE%E4%B9%A6%E6%8E%A8%E8%8D%90/">图书推荐</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/Java/">Java</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a target="_blank" rel="noopener" href="https://github.com/klugjo/hexo-theme-alpha-dust">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a target="_blank" rel="noopener" href="https://twitter.com/?lang=en">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-twitter"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a target="_blank" rel="noopener" href="https://www.facebook.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-facebook"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a target="_blank" rel="noopener" href="https://www.instagram.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-instagram"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a target="_blank" rel="noopener" href="https://dribbble.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-dribbble"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a target="_blank" rel="noopener" href="https://telegram.org/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-telegram"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a target="_blank" rel="noopener" href="https://www.behance.net/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-behance"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a target="_blank" rel="noopener" href="https://500px.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-500px"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:18303460126@163.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Untitled. All right reserved | Design & Hexo <a target="_blank" rel="noopener" href="http://www.codeblocq.com/">Jonathan Klughertz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+
+<script src="/js/main.js"></script>
+
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
